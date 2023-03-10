@@ -64,17 +64,17 @@ body {
 }
 
 .acc_item:hover > .cross{
-    display: flex;
+    opacity: 1;
 }
 .acc_item:hover > .plus{
-    display: none;
+    opacity: 0;
 }
 
 .item_select:focus ~ .cross{
-    display: flex;
+    opacity: 1;
 }
 .item_select:focus ~ .plus{
-    display: none;
+    opacity: 0;
 }
 
 .item_select:focus ~ h2{
@@ -96,7 +96,8 @@ body {
     align-self: center;
     margin-left: 60vw;
     cursor: pointer;
-    display: none;
+    opacity: 0;
+    transition: 0.3s;
     font-size: 2vw;
     color: black;
 }
@@ -107,8 +108,10 @@ body {
     align-self: center;
     margin-left: 60vw;
     font-size: 1.3vw;
+    opacity: 1;
     cursor: pointer;
     color: black;
+    transition: 0.3s;
 }
 
 .item_select{
@@ -128,45 +131,3 @@ body {
 .acc_item:last-child>.line{
     display: none;
 }
-/*
-@media only screen and (max-width: 1439px) {
-    .title{
-        font-size: 1.2rem;
-    }
-    
-    body{
-        font-size: 0.7rem;
-    }
-
-    .cross{
-        margin-top: 0.3rem;
-        font-size: 0.8rem;
-    }
-
-    .plus{
-        margin-top: 0.4rem;
-        font-size: 0.5rem;
-    }
-}
-
-@media only screen and (max-width: 819px) {
-    .cross{
-        margin-top: 0.3rem;
-        font-size: 0.8rem;
-    }
-
-    .plus{
-        margin-top: 0.4rem;
-        font-size: 0.5rem;
-    }
-   
-    .title{
-        font-size: 0.8rem;
-    }
-    
-    body{
-        font-size: 0.4rem;
-    }
-}
-
-*/
