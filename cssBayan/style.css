@@ -16,7 +16,6 @@ body {
 .acc_item{
     display: flex;
     flex-direction: column;
-    cursor: pointer;
     max-height: 70vh;
 }
 
@@ -95,7 +94,6 @@ body {
     position:absolute;
     align-self: center;
     margin-left: 60vw;
-    cursor: pointer;
     opacity: 0;
     transition: 0.3s;
     font-size: 2vw;
@@ -109,7 +107,6 @@ body {
     margin-left: 60vw;
     font-size: 1.3vw;
     opacity: 1;
-    cursor: pointer;
     color: black;
     transition: 0.3s;
 }
@@ -120,8 +117,7 @@ body {
     height: 9.4vh;
     z-index: 100;
     opacity: 0;
-    align-self: stretch;
-    cursor: pointer;
+    align-self: stretch
 }
 
 .accordion:hover{
@@ -130,4 +126,10 @@ body {
 
 .acc_item:last-child>.line{
     display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+    .item_select{
+       cursor: pointer;
+    }
 }
