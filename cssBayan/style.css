@@ -1,0 +1,134 @@
+body {
+    font-family: Verdana, sans-serif;
+    color: blue;
+    font-size: calc(1vw);
+}
+
+.main{
+    min-height: 50vw;
+}
+
+.title{
+    color:black;
+}
+
+.line{
+    height: 0.2rem;
+    background-color: rgb(139, 164, 164);
+    width: 70vw;
+}
+.acc_item{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    max-height: 70vh;
+    width: 70vw;
+}
+
+.bayan{
+    height: 0;
+    width:  0;
+    align-self: center;
+    transition: 0.5s;
+    
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    width: 70vw;
+    display: flex;
+    align-content: flex-start;
+}
+
+.button:focus{
+    background-color: black;
+}
+
+.item_select:focus ~ .bayan{
+    height: 25vw;
+    width:  25vw;
+    margin-bottom: 1.2vw;
+    border:solid black;
+}
+
+.item_select:focus ~ .plus{
+    visibility: visible;
+}
+
+.item_select:focus ~ h2{
+    color: black;
+}
+
+.item_select:focus{
+    height: 69vh;
+}
+
+.item_container{
+    display: flex;
+    align-content: flex-start;
+}
+
+.plus{
+    margin-top: 1vw;
+    position: absolute;
+    align-self: center;
+    margin-left: 60vw;
+    transition: 0.3s;
+    height: 2vw;
+    width: 2vw;
+    background-size: contain;
+    background-image: url("./assets/plus.png");
+    visibility: hidden;
+}
+
+.item_select{
+    position: absolute;
+    width: 70vw; 
+    height: 9.4vh;
+    z-index: 100;
+    opacity: 0;
+    align-self: stretch;
+    cursor: pointer;
+}
+
+.acc_item:last-child>.line{
+    display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+    
+    .item_select{
+       cursor: pointer;
+    }
+
+    .acc_item:hover > .bayan{
+        height: 25vw;
+        width:  25vw;
+        margin-bottom: 1.2vw;
+        border:solid black;
+    }
+
+    .acc_item:hover > .item_select{
+        height: 69vh;
+    }
+    
+    .acc_item:hover > .plus{
+        background-image: url("./assets/x.png");
+        visibility: visible;
+    }
+
+    .accordion:hover>.acc_item>.plus{
+        visibility: visible;
+    }
+
+    .accordion:hover{
+        color: black;
+    }
+
+}
