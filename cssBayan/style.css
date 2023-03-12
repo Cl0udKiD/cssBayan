@@ -2,7 +2,11 @@ body {
     font-family: Verdana, sans-serif;
     color: blue;
     font-size: calc(1vw);
-  }
+}
+
+.main{
+    min-height: 50vw;
+}
 
 .title{
     color:black;
@@ -16,7 +20,9 @@ body {
 .acc_item{
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     max-height: 70vh;
+    width: 70vw;
 }
 
 .bayan{
@@ -44,13 +50,6 @@ body {
     background-color: black;
 }
 
- .acc_item:hover > .bayan{
-    height: 25vw;
-    width:  25vw;
-    margin-bottom: 1.2vw;
-    border:solid black;
-}
-
 .item_select:focus ~ .bayan{
     height: 25vw;
     width:  25vw;
@@ -58,22 +57,8 @@ body {
     border:solid black;
 }
 
-.acc_item:hover > .item_select{
-    height: 69vh;
-}
-
-.acc_item:hover > .cross{
-    opacity: 1;
-}
-.acc_item:hover > .plus{
-    opacity: 0;
-}
-
-.item_select:focus ~ .cross{
-    opacity: 1;
-}
 .item_select:focus ~ .plus{
-    opacity: 0;
+    visibility: visible;
 }
 
 .item_select:focus ~ h2{
@@ -89,26 +74,17 @@ body {
     align-content: flex-start;
 }
 
-.cross{
-    margin-top: 1vw;
-    position:absolute;
-    align-self: center;
-    margin-left: 60vw;
-    opacity: 0;
-    transition: 0.3s;
-    font-size: 2vw;
-    color: black;
-}
-
 .plus{
     margin-top: 1vw;
     position: absolute;
     align-self: center;
     margin-left: 60vw;
-    font-size: 1.3vw;
-    opacity: 1;
-    color: black;
     transition: 0.3s;
+    height: 2vw;
+    width: 2vw;
+    background-size: contain;
+    background-image: url("./assets/plus.png");
+    visibility: hidden;
 }
 
 .item_select{
@@ -117,11 +93,8 @@ body {
     height: 9.4vh;
     z-index: 100;
     opacity: 0;
-    align-self: stretch
-}
-
-.accordion:hover{
-    color: black;
+    align-self: stretch;
+    cursor: pointer;
 }
 
 .acc_item:last-child>.line{
@@ -129,7 +102,33 @@ body {
 }
 
 @media only screen and (min-width: 1440px) {
+    
     .item_select{
        cursor: pointer;
     }
+
+    .acc_item:hover > .bayan{
+        height: 25vw;
+        width:  25vw;
+        margin-bottom: 1.2vw;
+        border:solid black;
+    }
+
+    .acc_item:hover > .item_select{
+        height: 69vh;
+    }
+    
+    .acc_item:hover > .plus{
+        background-image: url("./assets/x.png");
+        visibility: visible;
+    }
+
+    .accordion:hover>.acc_item>.plus{
+        visibility: visible;
+    }
+
+    .accordion:hover{
+        color: black;
+    }
+
 }
